@@ -23,21 +23,25 @@ export async function POST(request: Request) {
       submittedAt: new Date().toISOString(),
     };
 
-    // 1. Save locally to a submissions.json file in the root workspace folder
-    const filePath = path.join(process.cwd(), "submissions.json");
-    let existingSubmissions = [];
+    // 1. Save locally to a submissions.json file in the root workspace folder (wrapped in try-catch for read-only serverless runtimes)
+    try {
+      const filePath = path.join(process.cwd(), "submissions.json");
+      let existingSubmissions = [];
 
-    if (fs.existsSync(filePath)) {
-      const fileData = fs.readFileSync(filePath, "utf8");
-      try {
-        existingSubmissions = JSON.parse(fileData || "[]");
-      } catch (e) {
-        existingSubmissions = [];
+      if (fs.existsSync(filePath)) {
+        const fileData = fs.readFileSync(filePath, "utf8");
+        try {
+          existingSubmissions = JSON.parse(fileData || "[]");
+        } catch (e) {
+          existingSubmissions = [];
+        }
       }
-    }
 
-    existingSubmissions.push(submission);
-    fs.writeFileSync(filePath, JSON.stringify(existingSubmissions, null, 2), "utf8");
+      existingSubmissions.push(submission);
+      fs.writeFileSync(filePath, JSON.stringify(existingSubmissions, null, 2), "utf8");
+    } catch (fsError) {
+      console.warn("Local filesystem write skipped (expected on serverless environments like Netlify):", fsError);
+    }
 
     // 2. Output to the server console log
     console.log("================ CONTACT FORM SUBMISSION ================");
