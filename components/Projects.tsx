@@ -134,7 +134,7 @@ export default function Projects() {
           <Reveal
             key={project.id}
             delay={idx * 150}
-            className="group bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/30 dark:border-outline-variant/10 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer text-left"
+            className="group whimsy-tilt bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/30 dark:border-outline-variant/10 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer text-left"
           >
             {/* Card Image Container */}
             <div

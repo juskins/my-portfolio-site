@@ -85,7 +85,7 @@ export default function Contact() {
         <div className="space-y-6 text-left">
           <Reveal delay={100}>
             <span className="text-primary dark:text-primary-fixed font-bold uppercase tracking-wider text-xs">
-              Let's Collaborate
+              Let's Collaborate ✨
             </span>
           </Reveal>
           <Reveal delay={200}>
@@ -144,11 +144,11 @@ export default function Contact() {
           <div className="bg-white dark:bg-[#0d121f] rounded-[32px] p-6 md:p-8 shadow-2xl border border-outline-variant/20 dark:border-outline-variant/5">
             {status === "success" ? (
               <div className="text-center py-12 space-y-4 animate-fade-in">
-                <div className="w-16 h-16 bg-[#10b981]/10 rounded-full flex items-center justify-center text-[#10b981] mx-auto mb-4 border border-[#10b981]/25">
-                  <span className="material-symbols-outlined text-4xl">done</span>
+                <div className="w-16 h-16 bg-[#10b981]/10 rounded-full flex items-center justify-center text-[#10b981] mx-auto mb-4 border border-[#10b981]/25 animate-float">
+                  <span className="material-symbols-outlined text-4xl">celebration</span>
                 </div>
                 <h3 className="font-headline-md text-headline-md text-on-surface dark:text-white">
-                  Message Sent!
+                  Message sent. Woohoo!
                 </h3>
                 <p className="text-sm text-on-surface-variant dark:text-on-surface-variant/80 max-w-xs mx-auto">
                   Thank you for reaching out. I've received your request and will get back to you within 24 hours.

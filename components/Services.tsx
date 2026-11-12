@@ -51,7 +51,7 @@ export default function Services() {
           <Reveal
             key={service.title}
             delay={idx * 150}
-            className="group bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/30 dark:border-outline-variant/10 rounded-3xl p-8 text-left hover:-translate-y-2.5 hover:shadow-2xl dark:hover:border-primary/40 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
+            className="group whimsy-tilt bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/30 dark:border-outline-variant/10 rounded-3xl p-8 text-left hover:-translate-y-2.5 hover:shadow-2xl dark:hover:border-primary/40 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
           >
             <div>
               {/* Animated Icon Wrapper */}

@@ -271,3 +271,101 @@ body {
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #003366;
 }
+
+/* ─── Whimsy: playful motion (uses design-system tokens only) ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--float-rot, 0deg)); }
+  50% { transform: translateY(-12px) rotate(calc(var(--float-rot, 0deg) * -1)); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg) scale(1.05); }
+  40% { transform: rotate(7deg) scale(1.05); }
+  60% { transform: rotate(-5deg); }
+  80% { transform: rotate(4deg); }
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(16deg); }
+  20%, 40% { transform: rotate(-10deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@keyframes sparkle-burst {
+  0% { transform: translate(0, 0) scale(0) rotate(0deg); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(1) rotate(180deg); opacity: 0; }
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0) rotate(-12deg); opacity: 0; }
+  70% { transform: scale(1.15) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(20deg); }
+}
+
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-float-slow { animation: float 7s ease-in-out infinite; }
+.animate-wave { animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; display: inline-block; }
+.animate-twinkle { animation: twinkle 2.6s ease-in-out infinite; }
+.animate-pop-in { animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.animate-fade-in { animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.hover-wiggle:hover { animation: wiggle 0.6s ease-in-out; }
+
+/* Cards tilt playfully with a springy ease */
+.whimsy-tilt { transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+.whimsy-tilt:nth-child(odd):hover { rotate: -1deg; }
+.whimsy-tilt:nth-child(even):hover { rotate: 1deg; }
+
+/* Floating sticker badges */
+.sticker {
+  background: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+  border: 2px solid var(--color-surface-container-lowest);
+  box-shadow: 0 8px 20px rgba(107, 56, 212, 0.2);
+}
+.dark .sticker {
+  background: var(--color-surface-container-high);
+  color: var(--color-primary-fixed);
+  border-color: var(--color-surface-container);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sparkle-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  animation: sparkle-burst 0.8s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-float-slow, .animate-wave, .animate-twinkle,
+  .animate-pop-in, .animate-fade-in, .hover-wiggle:hover, .sparkle-particle {
+    animation: none !important;
+  }
+  .whimsy-tilt:hover { rotate: 0deg !important; }
+}
+
+/* ─── Easter egg: Konami confetti ─── */
+@keyframes confetti-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(var(--spin, 540deg)); opacity: 0.9; }
+}
+
+.confetti-piece {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  z-index: 100;
+  animation: confetti-fall var(--dur, 3s) ease-in var(--delay, 0s) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti-piece { animation: none !important; display: none; }
+}

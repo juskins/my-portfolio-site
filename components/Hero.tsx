@@ -106,13 +106,14 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed dark:bg-surface-container dark:text-primary-fixed font-label-md text-[13px] font-bold shadow-sm">
               <span className="w-2.5 h-2.5 rounded-full bg-[#10b981] animate-pulse"></span>
               Available for new opportunities
+              <span className="animate-wave" aria-hidden="true">👋</span>
             </div>
           </Reveal>
 
           <Reveal delay={200}>
             <h1 className="font-display-mobile text-display-mobile lg:font-display lg:text-display text-on-surface dark:text-white leading-tight">
               Babatunde<br />
-              <span className="text-primary dark:text-primary-fixed-dim">Omojuwa</span>
+              <span className="relative inline-block text-primary dark:text-primary-fixed-dim hover-wiggle cursor-default">Omojuwa<span className="material-symbols-outlined absolute -top-3 -right-8 text-[28px] animate-twinkle" aria-hidden="true" style={{ fontVariationSettings: "'FILL' 1" }}>auto_awesome</span></span>
             </h1>
           </Reveal>
 
@@ -232,10 +233,20 @@ export default function Hero() {
         {/* Right Code Mockup Card */}
         <Reveal delay={400} direction="left" className="relative z-10 flex justify-center lg:justify-end">
           {/* Abstract background shadow shape */}
+          {/* Floating stickers */}
+          <div className="absolute -top-4 left-2 lg:left-0 z-20 sticker rounded-full px-3 py-1.5 text-[12px] font-bold flex items-center gap-1 animate-float" style={{ "--float-rot": "-6deg" } as React.CSSProperties}>
+            <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>coffee</span> Fueled by coffee
+          </div>
+          <div className="absolute -bottom-5 right-2 lg:right-4 z-20 sticker rounded-full px-3 py-1.5 text-[12px] font-bold flex items-center gap-1 animate-float-slow" style={{ "--float-rot": "5deg" } as React.CSSProperties}>
+            <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>bug_report</span> 0 bugs*
+          </div>
+          <div className="absolute top-1/2 -left-3 z-20 sticker rounded-full w-10 h-10 items-center justify-center animate-float hidden md:flex" style={{ "--float-rot": "10deg" } as React.CSSProperties}>
+            <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
+          </div>
           <div className="absolute w-full h-full max-w-[400px] bg-primary/10 dark:bg-primary/5 rounded-[40px] rotate-6 scale-105 -z-10 blur-sm"></div>
 
           {/* Code mock card */}
-          <div className="bg-white dark:bg-[#0d121f] rounded-[24px] p-6 md:p-8 w-full max-w-[480px] code-shadow border border-outline-variant/20 dark:border-outline-variant/5 hover:-rotate-1 hover:scale-102 transition-all duration-500">
+          <div className="bg-white dark:bg-[#0d121f] rounded-[24px] p-6 md:p-8 w-full max-w-[480px] code-shadow border border-outline-variant/20 dark:border-outline-variant/5 hover:-rotate-2 hover:scale-102 transition-all duration-500 whimsy-tilt">
             <div className="flex gap-2 mb-6">
               <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
               <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
@@ -311,7 +322,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="text-[10px] uppercase tracking-wider font-bold text-on-surface-variant/70 animate-pulse">
-                SYSTEM STATUS: ACTIVE
+                SYSTEM STATUS: VIBING
               </div>
             </div>
           </div>

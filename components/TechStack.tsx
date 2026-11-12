@@ -136,7 +136,7 @@ export default function TechStack() {
           <Reveal
             key={item.name}
             delay={idx * 100}
-            className="group bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/30 dark:border-outline-variant/10 rounded-3xl p-6 hover:shadow-xl dark:hover:border-primary/40 hover:border-primary/20 transition-all duration-300 text-left flex flex-col justify-between"
+            className="group whimsy-tilt bg-surface-container-lowest dark:bg-surface-container border border-outline-variant/30 dark:border-outline-variant/10 rounded-3xl p-6 hover:shadow-xl dark:hover:border-primary/40 hover:border-primary/20 transition-all duration-300 text-left flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-4">

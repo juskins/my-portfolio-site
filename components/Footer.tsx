@@ -135,7 +135,7 @@ export default function Footer() {
 
       {/* Bottom info */}
       <div className="max-w-container-max mx-auto w-full pt-8 border-t border-outline-variant/20 dark:border-outline-variant/5 flex flex-col md:flex-row justify-between items-center text-[12px] text-on-surface-variant dark:text-on-surface-variant/60 gap-4">
-        <div>© {currentYear} Babatunde Omojuwa. All rights reserved.</div>
+        <div className="flex items-center gap-1.5 flex-wrap justify-center">© {currentYear} Babatunde Omojuwa. Made with <span className="material-symbols-outlined text-[16px] text-primary dark:text-primary-fixed-dim animate-float" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span> and way too much coffee.</div>
         <div className="flex gap-6 mt-4 md:mt-0">
           <a className="hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#home">
             Privacy Policy

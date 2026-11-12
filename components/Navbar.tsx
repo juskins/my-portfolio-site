@@ -86,7 +86,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full w-full">
           {/* Brand Logo */}
           <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110">
+            <div className="w-8 h-8 rounded bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12">
               <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                 code
               </span>
@@ -120,7 +120,7 @@ export default function Navbar() {
               className="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 transition-colors"
               aria-label="Toggle theme"
             >
-              <span className="material-symbols-outlined">
+              <span key={String(dark)} className="material-symbols-outlined animate-pop-in">
                 {dark ? "light_mode" : "dark_mode"}
               </span>
             </button>
@@ -148,7 +148,7 @@ export default function Navbar() {
               className="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 transition-colors"
               aria-label="Toggle theme"
             >
-              <span className="material-symbols-outlined">
+              <span key={String(dark)} className="material-symbols-outlined animate-pop-in">
                 {dark ? "light_mode" : "dark_mode"}
               </span>
             </button>
