@@ -75,6 +75,52 @@ export default function Projects() {
       githubUrl: "https://github.com/InventorsDev/Team-Epsilon-Enforcers-Frontend",
     },
     {
+      id: "buggy-bash-3d",
+      title: "Buggy Bash 3D",
+      category: "other",
+      tags: ["three.js", "WebGL", "Game Physics", "start.ng"],
+      description:
+        "A 3D arcade racer that runs in the browser. Pick one of four tracks and four cars, race three laps, grab glowing crates for speed boosts and bump off obstacles, then chase the best lap on a live leaderboard.",
+      image: "/assets/buggy-bash.png",
+      metricIcon: "verified",
+      metricText: "4 tracks, 4 cars and a live start.ng leaderboard, all in a single static build",
+      role: "Frontend Engineer",
+      duration: "3 days",
+      challenge:
+        "The hackathon brief was a 3D game in three.js, with only a few days to deliver. A racing game needs a lot to feel right at once: a believable car, collisions, a track, a camera and a HUD. It also had to run as a static site, with no server, and plug into start.ng for sign-in, player characters and leaderboards.",
+      solution:
+        "I built it in plain three.js with no framework or build step. I wrote the vehicle physics myself: the car is a rigid body with contact points, so hitting a wall or rock gives a bounce and spin. Each track is a config (sky, lighting, scenery, lamps) that one world builder turns into a scene, so adding a track means adding data. Each car is a set of handling stats, which gave me four distinct cars. Players appear as their own start.ng character, and best lap and race time go to the shared leaderboard through start.ng's connect page.",
+      outcome:
+        "Live on start.ng with four tracks (beach, desert, neon city, night), four cars, pause and restart, touch controls, a minimap and lap timing. It passed start.ng's automated checks for malware, the game standards and the leaderboard setup.",
+      liveUrl: "https://buggy-bash-3d.start.ng/",
+      githubUrl: "https://github.com/juskins/buggy-bash-3d-game",
+    },
+    {
+      id: "mama_gbenga_store",
+      title: "Iya Gbenga's Store",
+      category: "ecommerce",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "PostgreSQL",
+        "Redux Toolkit",
+        "Mobile-First"
+      ],
+      description: "A fast, mobile-first e-commerce platform for authentic Nigerian staples and groceries, featuring real-time cart sync, Google OAuth, and automated order processing.",
+      image: "/assets/mama_gbenga_store.png",
+      metricIcon: "package",
+      metricText: "Sub-2.5s LCP & 100% server-validated checkout",
+      role: "Full-Stack Engineer",
+      duration: "1 week",
+      challenge: "Traditional open-market grocery shopping and manual WhatsApp orders in Lagos suffer from fragmented communication, zero order history, and lack of real-time inventory management. The challenge was building an ultra-fast, mobile-first storefront capable of handling guest-to-authenticated cart persistence and localized delivery zones under varied mobile network conditions.",
+      solution: "Engineered a performant Next.js App Router application with Supabase PostgreSQL and Row-Level Security. Built hybrid cart management (persisted in localStorage for guests and synced with the database via Redux on Google OAuth login), server-side checkout validation for stock and pricing, and dual transactional notification channels (Nodemailer SMTP & Resend) with direct WhatsApp assistance.",
+      outcome: "Delivered and deployed a production-ready grocery e-commerce app with fast 4G mobile load speeds, zero-loss order processing, and a seamless checkout experience.",
+      liveUrl: "https://iyagbengastore.netlify.app/",
+      githubUrl: "https://github.com/juskins/Iya-Gbenga-Store",
+    },
+    {
       id: "ip_address_tracker",
       title: "IP Address Tracker",
       category: "other",
@@ -187,14 +233,6 @@ export default function Projects() {
                     {project.metricText}
                   </span>
                 </div>
-
-                <button
-                  onClick={() => setActiveProject(project)}
-                  className="inline-flex items-center gap-2 text-primary dark:text-primary-fixed font-label-md text-label-md hover:gap-3 transition-all font-bold"
-                >
-                  View Case Study
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </button>
               </div>
             </div>
           </Reveal>
